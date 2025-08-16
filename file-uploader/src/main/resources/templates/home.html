@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>ファイルアップローダー</title>
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+  <h1>ファイルアップローダー</h1>
+  <p>アップロードするファイルを選択してください。</p>
+
+  <div th:if="${message}" class="message">
+    <p th:text="${message}"></p>
+  </div>
+
+  <form th:action="@{/upload}" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" required>
+    <button type="submit">アップロード</button>
+  </form>
+</body>
+</html>
